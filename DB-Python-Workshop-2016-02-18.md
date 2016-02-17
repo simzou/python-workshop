@@ -16,10 +16,10 @@
     - Generators
 - Functional Programming
     - Map
-    - Zip
+    - Filter
 - Standard Library
     - itertools
-    - random.choice
+    - random
     - pdb
     - defaultdict
 - External 
@@ -28,6 +28,9 @@
     - numpy, matplotlib, jupyter (numerical/scientific computing)
     - nltk (natural language processing)
     - sklearn (machine learning and data science)
+- The python toolkit
+    - pip
+    - virtualenv
 - Community / Drama / Resources
     - 2v3
     - Conferences
@@ -43,7 +46,7 @@
 
 ## What is this workshop
 
-- The only real unifying theme of this talk is that it's going to be features of python that I (Simon) like or think are cool that go beyond the very basics of python. 
+- The only real unifying theme of this talk is that it's going to be features of python that I (Simon) like or think are cool / interesting / useful about python that go beyond the basics.
 - [Not a beginner, not an expert](http://afabbro.github.io/jsconf2013/), [video](https://www.youtube.com/watch?v=v0TFmdO4ZP0) - good talk on being an intermediate programmer
 - Code / presentation is at https://github.com/simzou/python-workshop
 - This is a jupyter notebook, if you have it installed you can run the code in this talk by double clicking a code cell and hitting shift+enter. If you don't, don't worry about it, will talk about it later.
@@ -55,10 +58,12 @@
 - Why I like python
     - "batteries included"
     - lots of features, but the syntax stays out of your way
+    - lots of mature libraries
     - It's fun (name origin, code feels clean)
 
 
 ```python
+# try this
 import antigravity
 ```
 
@@ -252,11 +257,9 @@ print squares
     [0, 4, 16, 36, 64]
 
 
-## Functional Programming
+On the agenda it says we're going to cover iterables and generators next, but I think it's easier to explain if I start with something else:
 
-
-
-# The Standard Library
+# A detour to the Standard Library
 ## itertools library
 - As the name implies useful for iterating over stuff
 
@@ -307,7 +310,7 @@ print combos
     <itertools.combinations object at 0x104663578>
 
 
-# A detour - Some python concepts
+# Some python concepts
 ## Iterables and iterators
 - Iterable definition: "An iterable is an object that has an __iter__ method which returns an iterator"
 - Iterator definition: "An iterator is an object with a next method"
@@ -389,10 +392,234 @@ print type(xrange(10))
     <type 'xrange'>
 
 
+# Functional Programming
+
+Wikipedia definition: "programming paradigm—a style of building the structure and elements of computer programs—that treats computation as the evaluation of mathematical functions and avoids changing-state and mutable data."
+
+My definition: When you pass functions as parameters to other functions 
+
+## built in python methods - map, filter
+
+### map - apply a function to every element
+
 
 ```python
-
+words = "Hi my name is Simon".split()
+# ['Hi', 'my', 'name', 'is', 'Simon']
+# get the length of each word
+map(len, words)
 ```
+
+
+
+
+    [2, 2, 4, 2, 5]
+
+
+
+### lambda functions - functions without a name
+
+
+
+```python
+def add(x,y):
+    return x + y
+
+# is equivalent to 
+
+add = lambda x,y:  x + y
+```
+
+
+```python
+map(lambda x: x.upper(), words)
+```
+
+
+
+
+    ['HI', 'MY', 'NAME', 'IS', 'SIMON']
+
+
+
+### filter - filters things
+
+
+```python
+# even numbers
+filter(lambda x: x % 2 == 0, range(20))
+```
+
+
+
+
+    [0, 2, 4, 6, 8, 10, 12, 14, 16, 18]
+
+
+
+
+```python
+# get all words from sentence with 3 or fewer letters
+filter(lambda x: len(x) <= 3, "Hi My Name is Simon".split())
+```
+
+
+
+
+    ['Hi', 'My', 'is']
+
+
+
+# Back to the Standard Library
+
+## random
+
+- lots of stuff in here, the things I find most useful is `random.choice` and `random.sample`
+- [Python docs](https://docs.python.org/2/library/random.html)
+
+
+```python
+import random
+
+numbers = range(10)
+
+for _ in range(5):
+    print random.choice(numbers)
+```
+
+    1
+    9
+    9
+    7
+    1
+
+
+
+```python
+random.sample(numbers, 5)
+```
+
+
+
+
+    [5, 1, 6, 7, 2]
+
+
+
+## pdb - because you miss gdb
+- Use `pdb.set_trace()` to set a breakpoint
+
+
+```python
+import pdb
+
+x = 4
+y = 5
+pdb.set_trace()
+z = 6
+```
+
+    --Return--
+    > <ipython-input-31-81639141f23c>(5)<module>()->None
+    -> pdb.set_trace()
+    (Pdb) x
+    4
+    (Pdb) z
+    *** NameError: name 'z' is not defined
+    (Pdb) exit()
+
+
+
+    ---------------------------------------------------------------------------
+
+    BdbQuit                                   Traceback (most recent call last)
+
+    <ipython-input-31-81639141f23c> in <module>()
+          3 x = 4
+          4 y = 5
+    ----> 5 pdb.set_trace()
+          6 z = 6
+
+
+    /Users/simon/anaconda/lib/python2.7/bdb.pyc in trace_dispatch(self, frame, event, arg)
+         51             return self.dispatch_call(frame, arg)
+         52         if event == 'return':
+    ---> 53             return self.dispatch_return(frame, arg)
+         54         if event == 'exception':
+         55             return self.dispatch_exception(frame, arg)
+
+
+    /Users/simon/anaconda/lib/python2.7/bdb.pyc in dispatch_return(self, frame, arg)
+         89             finally:
+         90                 self.frame_returning = None
+    ---> 91             if self.quitting: raise BdbQuit
+         92         return self.trace_dispatch
+         93 
+
+
+    BdbQuit: 
+
+
+## collections - fancy containers
+
+### defaultdict - dictionaries with default values for keys
+
+
+```python
+from collections import defaultdict
+
+dd = defaultdict(list)
+print dd['keyIhaventseenbefore']
+```
+
+    []
+
+
+# The Python Ecosystem - External Libraries
+
+Beautiful thing about python is that other people like it and build libraries to do useful stuff for it.
+
+- Django, Flask (web frameworks)
+- BeautifulSoup (scraping websites)
+- numpy, matplotlib, jupyter (numerical/scientific computing)
+- nltk (natural language processing)
+- sklearn (machine learning and data science)
+
+## Libaries for managing these libraries
+
+- pip (python package manager)
+    - e.g. `pip install django`
+- virtualenv (create a contained python environment)
+    - for managing different versions of libraries
+
+# Community
+
+- Big python conferences are called PyCon, they happen around the world
+- There's also separate conferences for SciPy, Django, ... 
+- [SoCal Python Meetup Group](http://www.meetup.com/socalpython/)
+- [Pyladies](www.pyladies.com)
+- I've never been to any python conferences, but here's a description from Paul Ford's beautiful article / novella [What is Code](http://www.bloomberg.com/graphics/2015-paul-ford-what-is-code/): 
+
+> Tech conferences look like you’d expect. Tons of people at a Sheraton, keynote in Ballroom D. Or enormous streams of people wandering through South by Southwest in Austin. People come together in the dozens or thousands and attend panels, ostensibly to learn; they attend presentations and brush up their skills, but there’s a secondary conference function, one of acculturation. You go to a technology conference to affirm your tribal identity, to transfer out of the throng of dilettantes and into the zone of the professional. You pick up swag and talk to vendors, if that’s your thing.
+
+# Python 2 vs Python 3 drama and notes
+
+- In 2008 python 3 was released. It is a technically "better" language (more consistent, efficient, better Unicode support) but it was not backwards compatible with python 2. This made people unhappy.
+    - division is by default integer division in python 2 but is floating point in python 3
+        - you can get python 3 division (and others similarly) in python 2 by including `from __future__ import division` in your python file
+    - instead of `print "Hello World"` you now have to do `print("Hello World")` in python 3. In some ways this is a small change, in other ways it's a huge change that got people most upset
+- Python 2 "just worked" so adoption has been slow. As of 2015, more people were still using python 2 [[citation]](http://stackoverflow.com/questions/30751668/python-2-vs-python-3-2015-usage)
+- Part of the problem is that every major library had to be rewritten in python 3, so many did not support python 3 for a while
+- I still use python 2
+
+# Resources (i.e. where I learned Python)
+
+- [Udacity](udacity.com)
+    - [CS 212 - Design of Computer Programs](https://www.udacity.com/course/design-of-computer-programs--cs212) - Taught by Peter Norvig, director of Research of Google and author of the standard book in AI (used in UCLA's CS 161). Probably my favorite class I've ever taken. Most of things in this workshop come from there.
+    - [CS 373 - Programming a Robotic Car](https://www.udacity.com/course/artificial-intelligence-for-robotics--cs373) - Taught by Sebastian Thrun, who started the autonomous car project at Google. Not python per se, but you get practice doing something cool in python and some numerical computing stuff
+    - [CS 253 - Web App Development](https://www.udacity.com/course/web-development--cs253) - Taught by Steve Huffman, co-founder of reddit. Teaches you how to build a blog and wiki from scratch using python and Google App Engine
+- Books
+    - There was a one python book at my local library, just checked that out and read it
 
 
 ```python
