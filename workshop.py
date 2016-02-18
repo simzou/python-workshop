@@ -8,36 +8,20 @@
 # - Introductions
 # - Motivation
 # - Warm-ups
-#     - sorted
-#     - string slicing
-#     - set
+#     - sorted, slicing, sets
 # - Fancy Python Shortcuts and Concepts and stuff
-#     - List comprehensions
-#     - Ternary operator
-#     - Iterables
-#     - Generators
+#     - List comprehensions, ternary operator, iterables, generators
 # - Functional Programming
-#     - Map
-#     - Filter
+#     - map, filter
 # - Standard Library
-#     - itertools
-#     - random
-#     - defaultdict
-#     - pdb
-# - External 
-#     - Django, Flask (web frameworks)
-#     - BeautifulSoup (scraping websites)
-#     - numpy, matplotlib, jupyter (numerical/scientific computing)
-#     - nltk (natural language processing)
-#     - sklearn (machine learning and data science)
+#     - itertools, random, collections, pdb
+# - External Libaries
 # - The python toolkit
-#     - pip
+#     - pip, virtualenv, anaconda
 #     - virtualenv
 #     - anaconda
 # - Community / Drama / Resources
-#     - 2v3
-#     - Conferences
-#     - Udacity
+#     - 2v3, conferences, Udacity
 
 # # Introduction
 # 
@@ -48,6 +32,10 @@
 # - how to write functions in python
 # - `len`, `range`, basic built in functions
 # 
+# 
+# 
+# 
+
 # ## What is this workshop
 # 
 # - The only real unifying theme of this talk is that it's going to be features of python that I (Simon) like or think are cool / interesting / useful about python that go beyond the basics.
@@ -55,7 +43,7 @@
 # - Code / presentation is at https://github.com/simzou/python-workshop, [web page](simzou.github.io/python-workshop), [alternative](https://github.com/simzou/python-workshop/blob/master/workshop.md)
 # - This is a jupyter notebook, if you have it installed you can run the code in this talk by double clicking a code cell and hitting shift+enter. If you don't, don't worry about it, will talk about it later.
 # 
-# 
+
 # # Motivation
 # 
 # - Question for the audience: Why are you here?
@@ -407,6 +395,8 @@ z = 6
 # - jupyter notebooks
 #     - tool primarily used for data science, scientific computing, but I find it useful pedagogy and presentations as well
 # 
+# 
+
 # ## Libaries for managing these libraries
 # 
 # - pip (python package manager)
@@ -426,6 +416,8 @@ z = 6
 # 
 # > Tech conferences look like you’d expect. Tons of people at a Sheraton, keynote in Ballroom D. Or enormous streams of people wandering through South by Southwest in Austin. People come together in the dozens or thousands and attend panels, ostensibly to learn; they attend presentations and brush up their skills, but there’s a secondary conference function, one of acculturation. You go to a technology conference to affirm your tribal identity, to transfer out of the throng of dilettantes and into the zone of the professional. You pick up swag and talk to vendors, if that’s your thing.
 # 
+# 
+
 # # Python 2 vs Python 3 drama and notes
 # 
 # - In 2008 python 3 was released. It is a technically "better" language (more consistent, efficient, better Unicode support) but it was not backwards compatible with python 2. This made people unhappy.
@@ -444,3 +436,5 @@ z = 6
 #     - [CS 253 - Web App Development](https://www.udacity.com/course/web-development--cs253) - Taught by Steve Huffman, co-founder of reddit. Teaches you how to build a blog and wiki from scratch using python and Google App Engine
 # - Books
 #     - There was a one python book at my local library, just checked that out and read it
+
+# # The End
