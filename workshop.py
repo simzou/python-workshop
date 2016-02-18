@@ -3,10 +3,12 @@
 
 # # Intermediate Python Workshop
 # 
+# 
+
 # ## Agenda
 # 
 # - Introductions
-# - Motivation
+#     - Motivation
 # - Warm-ups
 #     - sorted, slicing, sets
 # - Fancy Python Shortcuts and Concepts and stuff
@@ -421,13 +423,43 @@ z = 6
 
 # # Python 2 vs Python 3 drama and notes
 # 
-# - In 2008 python 3 was released. It is a technically "better" language (more consistent, efficient, better Unicode support) but it was not backwards compatible with python 2. This made people unhappy.
-#     - division is by default integer division in python 2 but is floating point in python 3
-#         - you can get python 3 division (and others similarly) in python 2 by including `from __future__ import division` in your python file
-#     - instead of `print "Hello World"` you now have to do `print("Hello World")` in python 3. In some ways this is a small change, in other ways it's a huge change that got people most upset
-# - Python 2 "just worked" so adoption has been slow. As of 2015, more people were still using python 2 [[citation]](http://stackoverflow.com/questions/30751668/python-2-vs-python-3-2015-usage)
-# - Part of the problem is that every major library had to be rewritten in python 3, so many did not support python 3 for a while
-# - I still use python 2
+# - In 2008 python 3 was released
+# - it was not backwards compatible with python 2
+# - This made people unhappy.
+# - As of 2015, more people were still using python 2 [[citation]](http://stackoverflow.com/questions/30751668/python-2-vs-python-3-2015-usage)
+# 
+
+# ## Division is different
+
+# In[1]:
+
+2/3
+
+
+# In[2]:
+
+# this was on Eggert's 131 final last quarter
+from __future__ import division
+2/3
+
+
+# ## Printing is different
+
+# In[3]:
+
+# no longer valid in python 3
+print "Hello World"
+
+
+# In[4]:
+
+# print is a now a function
+print ("Hello World")
+
+
+# ## Range is different
+# 
+# - As mentioned previously
 
 # # Resources (i.e. where I learned Python)
 # 

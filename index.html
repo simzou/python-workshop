@@ -174,9 +174,20 @@ div#notebook {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Intermediate-Python-Workshop">Intermediate Python Workshop<a class="anchor-link" href="#Intermediate-Python-Workshop">&#182;</a></h1><h2 id="Agenda">Agenda<a class="anchor-link" href="#Agenda">&#182;</a></h2><ul>
-<li>Introductions</li>
+<h1 id="Intermediate-Python-Workshop">Intermediate Python Workshop<a class="anchor-link" href="#Intermediate-Python-Workshop">&#182;</a></h1>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Agenda">Agenda<a class="anchor-link" href="#Agenda">&#182;</a></h2><ul>
+<li>Introductions<ul>
 <li>Motivation</li>
+</ul>
+</li>
 <li>Warm-ups<ul>
 <li>sorted, slicing, sets</li>
 </ul>
@@ -1521,17 +1532,156 @@ y: &lt;generator object count_using_yield at 0x104aa2640&gt;
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="Python-2-vs-Python-3-drama-and-notes">Python 2 vs Python 3 drama and notes<a class="anchor-link" href="#Python-2-vs-Python-3-drama-and-notes">&#182;</a></h1><ul>
-<li>In 2008 python 3 was released. It is a technically "better" language (more consistent, efficient, better Unicode support) but it was not backwards compatible with python 2. This made people unhappy.<ul>
-<li>division is by default integer division in python 2 but is floating point in python 3<ul>
-<li>you can get python 3 division (and others similarly) in python 2 by including <code>from __future__ import division</code> in your python file</li>
+<li>In 2008 python 3 was released</li>
+<li>it was not backwards compatible with python 2</li>
+<li>This made people unhappy.</li>
+<li>As of 2015, more people were still using python 2 <a href="http://stackoverflow.com/questions/30751668/python-2-vs-python-3-2015-usage">[citation]</a></li>
 </ul>
-</li>
-<li>instead of <code>print "Hello World"</code> you now have to do <code>print("Hello World")</code> in python 3. In some ways this is a small change, in other ways it's a huge change that got people most upset</li>
-</ul>
-</li>
-<li>Python 2 "just worked" so adoption has been slow. As of 2015, more people were still using python 2 <a href="http://stackoverflow.com/questions/30751668/python-2-vs-python-3-2015-usage">[citation]</a></li>
-<li>Part of the problem is that every major library had to be rewritten in python 3, so many did not support python 3 for a while</li>
-<li>I still use python 2</li>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Division-is-different">Division is different<a class="anchor-link" href="#Division-is-different">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[1]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span class="mi">2</span><span class="o">/</span><span class="mi">3</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt output_prompt">Out[1]:</div>
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>0</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[2]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span class="c"># this was on Eggert&#39;s 131 final last quarter</span>
+<span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">division</span>
+<span class="mi">2</span><span class="o">/</span><span class="mi">3</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt output_prompt">Out[2]:</div>
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>0.6666666666666666</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Printing-is-different">Printing is different<a class="anchor-link" href="#Printing-is-different">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[3]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span class="c"># no longer valid in python 3</span>
+<span class="k">print</span> <span class="s">&quot;Hello World&quot;</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Hello World
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[4]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span class="c"># print is a now a function</span>
+<span class="k">print</span> <span class="p">(</span><span class="s">&quot;Hello World&quot;</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Hello World
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Range-is-different">Range is different<a class="anchor-link" href="#Range-is-different">&#182;</a></h2><ul>
+<li>As mentioned previously</li>
 </ul>
 
 </div>
