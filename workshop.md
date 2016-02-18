@@ -20,8 +20,8 @@
 - Standard Library
     - itertools
     - random
-    - pdb
     - defaultdict
+    - pdb
 - External 
     - Django, Flask (web frameworks)
     - BeautifulSoup (scraping websites)
@@ -31,6 +31,7 @@
 - The python toolkit
     - pip
     - virtualenv
+    - anaconda
 - Community / Drama / Resources
     - 2v3
     - Conferences
@@ -310,7 +311,7 @@ for c in combos:
 print combos
 ```
 
-    <itertools.combinations object at 0x104663578>
+    <itertools.combinations object at 0x1049bc208>
 
 
 # Some python concepts
@@ -354,7 +355,7 @@ print "y:", count_using_yield()
 ```
 
     r: 1
-    y: <generator object count_using_yield at 0x104644cd0>
+    y: <generator object count_using_yield at 0x1049a1690>
 
 
 
@@ -490,10 +491,10 @@ for _ in range(5):
     print random.choice(numbers)
 ```
 
-    1
+    6
+    4
     9
-    9
-    7
+    6
     1
 
 
@@ -505,8 +506,23 @@ random.sample(numbers, 5)
 
 
 
-    [5, 1, 6, 7, 2]
+    [8, 5, 0, 6, 4]
 
+
+
+## collections - fancy containers
+
+### defaultdict - dictionaries with default values for keys
+
+
+```python
+from collections import defaultdict
+
+dd = defaultdict(list)
+print dd['keyIhaventseenbefore']
+```
+
+    []
 
 
 ## pdb - because you miss gdb
@@ -563,21 +579,6 @@ z = 6
     BdbQuit: 
 
 
-## collections - fancy containers
-
-### defaultdict - dictionaries with default values for keys
-
-
-```python
-from collections import defaultdict
-
-dd = defaultdict(list)
-print dd['keyIhaventseenbefore']
-```
-
-    []
-
-
 # The Python Ecosystem - External Libraries
 
 Beautiful thing about python is that other people like it and build libraries to do useful stuff for it.
@@ -585,9 +586,11 @@ Beautiful thing about python is that other people like it and build libraries to
 - Django, Flask (web frameworks)
     - Pinterest, Bitbucket built on Django
 - BeautifulSoup (scraping websites)
-- numpy, matplotlib, jupyter (numerical/scientific computing)
+- numpy, matplotlib (numerical/scientific computing)
 - nltk (natural language processing)
 - sklearn (machine learning and data science)
+- jupyter notebooks
+    - tool primarily used for data science, scientific computing, but I find it useful pedagogy and presentations as well
 
 ## Libaries for managing these libraries
 
@@ -595,6 +598,8 @@ Beautiful thing about python is that other people like it and build libraries to
     - e.g. `pip install django`
 - virtualenv (create a contained python environment)
     - for managing different versions of libraries
+- anaconda (for jupyter notebooks, data science stuff)
+    - not sure how well this plays with the above though...
 
 # Community
 
@@ -624,8 +629,3 @@ Beautiful thing about python is that other people like it and build libraries to
     - [CS 253 - Web App Development](https://www.udacity.com/course/web-development--cs253) - Taught by Steve Huffman, co-founder of reddit. Teaches you how to build a blog and wiki from scratch using python and Google App Engine
 - Books
     - There was a one python book at my local library, just checked that out and read it
-
-
-```python
-
-```

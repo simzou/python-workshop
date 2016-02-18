@@ -22,8 +22,8 @@
 # - Standard Library
 #     - itertools
 #     - random
-#     - pdb
 #     - defaultdict
+#     - pdb
 # - External 
 #     - Django, Flask (web frameworks)
 #     - BeautifulSoup (scraping websites)
@@ -33,6 +33,7 @@
 # - The python toolkit
 #     - pip
 #     - virtualenv
+#     - anaconda
 # - Community / Drama / Resources
 #     - 2v3
 #     - Conferences
@@ -77,7 +78,7 @@ import antigravity
 # - Tricking you into learning functional programming
 # - Python docs [here](https://docs.python.org/2/howto/sorting.html)
 
-# In[1]:
+# In[2]:
 
 sentence = "Thanks for coming to this python workshop! I think python is a neat language."
 # by default, split() uses whitespace as delimiters
@@ -85,19 +86,19 @@ words = sentence.split()
 print "words:", words
 
 
-# In[2]:
+# In[3]:
 
 sorted_words = sorted(words)
 print "sorted words:", sorted_words
 
 
-# In[3]:
+# In[4]:
 
 sorted_words_by_length = sorted(words, key=len)
 print "sorted words by length:", sorted_words_by_length
 
 
-# In[4]:
+# In[5]:
 
 sorted_words_by_length_rev = sorted(words, key=len, reverse=True)
 print "reversed:", sorted_words_by_length_rev
@@ -107,7 +108,7 @@ print "reversed:", sorted_words_by_length_rev
 # - useful for manipulating strings quickly
 # - Interview question: Does this create new memory?
 
-# In[5]:
+# In[6]:
 
 introduction = "Hi my name is Simon"
 # get the whole string
@@ -118,19 +119,19 @@ print introduction[4:]
 print introduction[:8]
 
 
-# In[6]:
+# In[7]:
 
 # get every other letter
 introduction[::2]
 
 
-# In[7]:
+# In[8]:
 
 # reverse the string
 introduction[::-1]
 
 
-# In[8]:
+# In[9]:
 
 # Also works in range()
 print range(0,20,2)
@@ -141,14 +142,14 @@ print range(0,20,2)
 # - so it's useful anytime you want to find unique elements, filter out duplicates, etc.
 # - Python docs [here](https://docs.python.org/2/library/stdtypes.html#set-types-set-frozenset)
 
-# In[9]:
+# In[10]:
 
 repeats = "Hi Hi My My Name Name is is Simon Simon"
 bag_of_words = set(repeats.split())
 print "Bag of words:", bag_of_words
 
 
-# In[10]:
+# In[11]:
 
 word = "bookkeeper"
 print set(word)
@@ -161,7 +162,7 @@ print set(word)
 # ## List Comprehensions
 # - for making lists in one line
 
-# In[11]:
+# In[12]:
 
 # Making a list of perfect squares
 squares = []
@@ -171,7 +172,7 @@ for i in range(10):
 print squares
 
 
-# In[12]:
+# In[13]:
 
 squares_lc = [i * i for i in range(10)]
 print squares_lc
@@ -180,7 +181,7 @@ print squares_lc
 # ## Ternary Operator
 # - for those too lazy to write an if else
 
-# In[13]:
+# In[14]:
 
 simon_is_hungry = False
 
@@ -192,7 +193,7 @@ else:
 print "Simon says,", words
 
 
-# In[14]:
+# In[15]:
 
 words = '"Give me food!"' if simon_is_hungry else '"I am full"'
 print "Simon says,", words
@@ -201,7 +202,7 @@ print "Simon says,", words
 # ## Combined, sort of
 # - okay not really
 
-# In[15]:
+# In[16]:
 
 squares = [x*x for x in range(10) if x % 2 == 0]
 print squares
@@ -213,7 +214,7 @@ print squares
 # ## itertools library
 # - As the name implies useful for iterating over stuff
 
-# In[16]:
+# In[17]:
 
 import itertools
 
@@ -222,14 +223,14 @@ for p in perms:
     print p
 
 
-# In[17]:
+# In[18]:
 
 combos = itertools.combinations("ABCD", 2)
 for c in combos:
     print c
 
 
-# In[18]:
+# In[19]:
 
 # what is this?
 print combos
@@ -250,7 +251,7 @@ print combos
 # 
 # ## Generators and the `yield` keyword
 
-# In[19]:
+# In[20]:
 
 # This code doesn't really make sense but bear with me
 def count_using_return():
@@ -266,7 +267,7 @@ def count_using_yield():
         yield count
 
 
-# In[20]:
+# In[21]:
 
 r = count_using_return()
 print "r:", r
@@ -274,7 +275,7 @@ y = count_using_yield()
 print "y:", count_using_yield()
 
 
-# In[21]:
+# In[22]:
 
 for c in count_using_yield():
     print c
@@ -290,7 +291,7 @@ for c in count_using_yield():
 # 
 # - This was a long way of saying `itertools.combinations` object is a generator
 
-# In[22]:
+# In[23]:
 
 print type(range(10))
 print type(xrange(10))
@@ -306,7 +307,7 @@ print type(xrange(10))
 # 
 # ### map - apply a function to every element
 
-# In[3]:
+# In[24]:
 
 words = "Hi my name is Simon".split()
 # ['Hi', 'my', 'name', 'is', 'Simon']
@@ -317,7 +318,7 @@ map(len, words)
 # ### lambda functions - functions without a name
 # 
 
-# In[10]:
+# In[25]:
 
 def add(x,y):
     return x + y
@@ -327,20 +328,20 @@ def add(x,y):
 add = lambda x,y:  x + y
 
 
-# In[11]:
+# In[26]:
 
 map(lambda x: x.upper(), words)
 
 
 # ### filter - filters things
 
-# In[12]:
+# In[27]:
 
 # even numbers
 filter(lambda x: x % 2 == 0, range(20))
 
 
-# In[13]:
+# In[28]:
 
 # get all words from sentence with 3 or fewer letters
 filter(lambda x: len(x) <= 3, "Hi My Name is Simon".split())
@@ -353,7 +354,7 @@ filter(lambda x: len(x) <= 3, "Hi My Name is Simon".split())
 # - lots of stuff in here, the things I find most useful is `random.choice` and `random.sample`
 # - [Python docs](https://docs.python.org/2/library/random.html)
 
-# In[24]:
+# In[29]:
 
 import random
 
@@ -363,9 +364,21 @@ for _ in range(5):
     print random.choice(numbers)
 
 
-# In[23]:
+# In[30]:
 
 random.sample(numbers, 5)
+
+
+# ## collections - fancy containers
+# 
+# ### defaultdict - dictionaries with default values for keys
+
+# In[32]:
+
+from collections import defaultdict
+
+dd = defaultdict(list)
+print dd['keyIhaventseenbefore']
 
 
 # ## pdb - because you miss gdb
@@ -381,18 +394,6 @@ pdb.set_trace()
 z = 6
 
 
-# ## collections - fancy containers
-# 
-# ### defaultdict - dictionaries with default values for keys
-
-# In[33]:
-
-from collections import defaultdict
-
-dd = defaultdict(list)
-print dd['keyIhaventseenbefore']
-
-
 # # The Python Ecosystem - External Libraries
 # 
 # Beautiful thing about python is that other people like it and build libraries to do useful stuff for it.
@@ -400,9 +401,11 @@ print dd['keyIhaventseenbefore']
 # - Django, Flask (web frameworks)
 #     - Pinterest, Bitbucket built on Django
 # - BeautifulSoup (scraping websites)
-# - numpy, matplotlib, jupyter (numerical/scientific computing)
+# - numpy, matplotlib (numerical/scientific computing)
 # - nltk (natural language processing)
 # - sklearn (machine learning and data science)
+# - jupyter notebooks
+#     - tool primarily used for data science, scientific computing, but I find it useful pedagogy and presentations as well
 # 
 # ## Libaries for managing these libraries
 # 
@@ -410,6 +413,8 @@ print dd['keyIhaventseenbefore']
 #     - e.g. `pip install django`
 # - virtualenv (create a contained python environment)
 #     - for managing different versions of libraries
+# - anaconda (for jupyter notebooks, data science stuff)
+#     - not sure how well this plays with the above though...
 
 # # Community
 # 
@@ -439,8 +444,3 @@ print dd['keyIhaventseenbefore']
 #     - [CS 253 - Web App Development](https://www.udacity.com/course/web-development--cs253) - Taught by Steve Huffman, co-founder of reddit. Teaches you how to build a blog and wiki from scratch using python and Google App Engine
 # - Books
 #     - There was a one python book at my local library, just checked that out and read it
-
-# In[ ]:
-
-
-
