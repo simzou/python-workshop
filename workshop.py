@@ -18,8 +18,6 @@
 # - External Libaries
 # - The python toolkit
 #     - pip, virtualenv, anaconda
-#     - virtualenv
-#     - anaconda
 # - Community / Drama / Resources
 #     - 2v3, conferences, Udacity
 
@@ -364,7 +362,7 @@ random.sample(numbers, 5)
 # 
 # ### defaultdict - dictionaries with default values for keys
 
-# In[32]:
+# In[31]:
 
 from collections import defaultdict
 
@@ -375,7 +373,7 @@ print dd['keyIhaventseenbefore']
 # ## pdb - because you miss gdb
 # - Use `pdb.set_trace()` to set a breakpoint
 
-# In[31]:
+# In[32]:
 
 import pdb
 

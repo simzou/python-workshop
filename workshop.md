@@ -16,8 +16,6 @@
 - External Libaries
 - The python toolkit
     - pip, virtualenv, anaconda
-    - virtualenv
-    - anaconda
 - Community / Drama / Resources
     - 2v3, conferences, Udacity
 
@@ -300,7 +298,7 @@ for c in combos:
 print combos
 ```
 
-    <itertools.combinations object at 0x1049bc208>
+    <itertools.combinations object at 0x104ac0208>
 
 
 # Some python concepts
@@ -346,7 +344,7 @@ print "y:", count_using_yield()
 ```
 
     r: 1
-    y: <generator object count_using_yield at 0x1049a1690>
+    y: <generator object count_using_yield at 0x104aa2640>
 
 
 
@@ -482,11 +480,11 @@ for _ in range(5):
     print random.choice(numbers)
 ```
 
-    6
+    2
     4
-    9
     6
-    1
+    7
+    2
 
 
 
@@ -497,7 +495,7 @@ random.sample(numbers, 5)
 
 
 
-    [8, 5, 0, 6, 4]
+    [5, 6, 0, 4, 7]
 
 
 
@@ -530,7 +528,7 @@ z = 6
 ```
 
     --Return--
-    > <ipython-input-31-81639141f23c>(5)<module>()->None
+    > <ipython-input-32-81639141f23c>(5)<module>()->None
     -> pdb.set_trace()
     (Pdb) x
     4
@@ -544,7 +542,7 @@ z = 6
 
     BdbQuit                                   Traceback (most recent call last)
 
-    <ipython-input-31-81639141f23c> in <module>()
+    <ipython-input-32-81639141f23c> in <module>()
           3 x = 4
           4 y = 5
     ----> 5 pdb.set_trace()
