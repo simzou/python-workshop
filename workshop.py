@@ -42,7 +42,7 @@
 #     - [web page](http://simzou.github.io/python-workshop) - http://simzou.github.io/python-workshop
 #     - [alternative web page](https://github.com/simzou/python-workshop/blob/master/workshop.md)
 #     - [slides](http://simzou.github.io/python-workshop/slides.html) - http://simzou.github.io/python-workshop/slides.html
-# - This is a jupyter notebook, if you have it installed you can run the code in this talk by double clicking a code cell and hitting shift+enter. If you don't, don't worry about it, will talk about it later.
+# - Slides were made using a jupyter notebook, more info about them later
 # 
 
 # # Motivation
