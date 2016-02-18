@@ -238,6 +238,8 @@ print combos
 # 
 # - So `combos` is clearly an iterable, but the type is not that of a collection (data structure that holds stuff); it is a **generator**
 # 
+# 
+
 # ## Generators and the `yield` keyword
 
 # In[20]:
