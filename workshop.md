@@ -31,14 +31,15 @@
 - `len`, `range`, basic built in functions
 
 
-
-
-
-## What is this workshop
+# What is this workshop
 
 - The only real unifying theme of this talk is that it's going to be features of python that I (Simon) like or think are cool / interesting / useful about python that go beyond the basics.
 - [Not a beginner, not an expert](http://afabbro.github.io/jsconf2013/), [video](https://www.youtube.com/watch?v=v0TFmdO4ZP0) - good talk on being an intermediate programmer
-- Code / presentation is at https://github.com/simzou/python-workshop, [web page](simzou.github.io/python-workshop), [alternative](https://github.com/simzou/python-workshop/blob/master/workshop.md)
+- Code and presentation links:
+    - Code - https://github.com/simzou/python-workshop
+    - [web page](http://simzou.github.io/python-workshop) - http://simzou.github.io/python-workshop
+    - [alternative web page](https://github.com/simzou/python-workshop/blob/master/workshop.md)
+    - [slides](http://simzou.github.io/python-workshop/slides.html) - http://simzou.github.io/python-workshop/slides.html
 - This is a jupyter notebook, if you have it installed you can run the code in this talk by double clicking a code cell and hitting shift+enter. If you don't, don't worry about it, will talk about it later.
 
 

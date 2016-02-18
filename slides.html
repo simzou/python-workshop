@@ -24,14 +24,14 @@ if( window.location.search.match( /print-pdf/gi ) ) {
         var link = document.createElement( 'link' );
         link.rel = 'stylesheet';
         link.type = 'text/css';
-        link.href = 'reveal.js/css/print/pdf.css';
+        link.href = 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/2.6.2/css/print/pdf.css';
         document.getElementsByTagName( 'head' )[0].appendChild( link );
 }
 
 </script>
 
 <!--[if lt IE 9]>
-<script src="reveal.js/lib/js/html5shiv.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/2.6.2/lib/js/html5shiv.js"></script>
 <![endif]-->
 
 <!-- Get Font-awesome from cdn -->
@@ -282,10 +282,16 @@ div.output_prompt {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="What-is-this-workshop">What is this workshop<a class="anchor-link" href="#What-is-this-workshop">&#182;</a></h2><ul>
+<h1 id="What-is-this-workshop">What is this workshop<a class="anchor-link" href="#What-is-this-workshop">&#182;</a></h1><ul>
 <li>The only real unifying theme of this talk is that it's going to be features of python that I (Simon) like or think are cool / interesting / useful about python that go beyond the basics.</li>
 <li><a href="http://afabbro.github.io/jsconf2013/">Not a beginner, not an expert</a>, <a href="https://www.youtube.com/watch?v=v0TFmdO4ZP0">video</a> - good talk on being an intermediate programmer</li>
-<li>Code / presentation is at <a href="https://github.com/simzou/python-workshop">https://github.com/simzou/python-workshop</a>, <a href="simzou.github.io/python-workshop">web page</a>, <a href="https://github.com/simzou/python-workshop/blob/master/workshop.md">alternative</a></li>
+<li>Code and presentation links:<ul>
+<li>Code - <a href="https://github.com/simzou/python-workshop">https://github.com/simzou/python-workshop</a></li>
+<li><a href="http://simzou.github.io/python-workshop">web page</a> - <a href="http://simzou.github.io/python-workshop">http://simzou.github.io/python-workshop</a></li>
+<li><a href="https://github.com/simzou/python-workshop/blob/master/workshop.md">alternative web page</a></li>
+<li><a href="http://simzou.github.io/python-workshop/slides.html">slides</a> - <a href="http://simzou.github.io/python-workshop/slides.html">http://simzou.github.io/python-workshop/slides.html</a></li>
+</ul>
+</li>
 <li>This is a jupyter notebook, if you have it installed you can run the code in this talk by double clicking a code cell and hitting shift+enter. If you don't, don't worry about it, will talk about it later.</li>
 </ul>
 
@@ -1718,8 +1724,8 @@ transition: Reveal.getQueryHash().transition || 'linear', // default/cube/page/c
 
 // Optional libraries used to extend on reveal.js
 dependencies: [
-{ src: "reveal.js/lib/js/classList.js", condition: function() { return !document.body.classList; } },
-{ src: "reveal.js/plugin/notes/notes.js", async: true, condition: function() { return !!document.body.classList; } }
+{ src: "https://cdnjs.cloudflare.com/ajax/libs/reveal.js/2.6.2/lib/js/classList.js", condition: function() { return !document.body.classList; } },
+{ src: "https://cdnjs.cloudflare.com/ajax/libs/reveal.js/2.6.2/plugin/notes/notes.js", async: true, condition: function() { return !!document.body.classList; } }
 ]
 });
 </script>
