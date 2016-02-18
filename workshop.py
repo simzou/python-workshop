@@ -45,6 +45,7 @@
 # - basic python syntax (for loops, variable declarations, strings)
 # - basic python data structures (lists, dictionaries)
 # - how to write functions in python
+# - `len`, `range`, basic built in functions
 # 
 # ## What is this workshop
 # 
@@ -60,10 +61,12 @@
 # - Why I like python
 #     - "batteries included"
 #     - lots of features, but the syntax stays out of your way
-#     - lots of mature libraries
-#     - It's fun (name origin, code feels clean)
+#     - lots of mature libraries for doing anything from web apps to natural language processing
+#     - code feels clean
+#     - usable in job interviews
+#     - It's fun 
 
-# In[ ]:
+# In[1]:
 
 # try this
 import antigravity
@@ -395,6 +398,7 @@ print dd['keyIhaventseenbefore']
 # Beautiful thing about python is that other people like it and build libraries to do useful stuff for it.
 # 
 # - Django, Flask (web frameworks)
+#     - Pinterest, Bitbucket built on Django
 # - BeautifulSoup (scraping websites)
 # - numpy, matplotlib, jupyter (numerical/scientific computing)
 # - nltk (natural language processing)
